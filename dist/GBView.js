@@ -1,8 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.clearBoard = exports.viewBoard = void 0;
-const container = document.getElementById("container");
-const viewBoard = (gameboard) => {
+const viewBoard = (gameboard, container) => {
     const board = gameboard.board;
     for (let r = 0; r < 10; r++) {
         for (let c = 0; c < 10; c++) {
@@ -43,7 +42,7 @@ const viewBoard = (gameboard) => {
     }
 };
 exports.viewBoard = viewBoard;
-const clearBoard = () => {
+const clearBoard = (container) => {
     container.innerHTML = "";
 };
 exports.clearBoard = clearBoard;

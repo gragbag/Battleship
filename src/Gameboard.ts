@@ -68,4 +68,8 @@ export class Gameboard {
 
 		this.board[row][col] = 1; //1 means the square has already been hit
 	}
+
+	gameOver() {
+		return this.ships == 0;
+	}
 }

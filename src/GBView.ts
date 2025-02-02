@@ -1,7 +1,6 @@
 import { Gameboard } from "./Gameboard";
-const container = document.getElementById("container") as HTMLDivElement;
 
-const viewBoard = (gameboard: Gameboard) => {
+const viewBoard = (gameboard: Gameboard, container: HTMLDivElement) => {
 	const board = gameboard.board;
 	for (let r = 0; r < 10; r++) {
 		for (let c = 0; c < 10; c++) {
@@ -46,7 +45,7 @@ const viewBoard = (gameboard: Gameboard) => {
 	}
 };
 
-const clearBoard = () => {
+const clearBoard = (container: HTMLDivElement) => {
 	container.innerHTML = "";
 };
 

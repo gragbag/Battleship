@@ -1,5 +1,4 @@
 import { Ship } from "./Ship";
-
 export class Gameboard {
 	board: any[][];
 	ships: number;
@@ -55,7 +54,9 @@ export class Gameboard {
 
 	receiveAttack(row: number, col: number) {
 		if (!(this.board[row][col] instanceof Ship)) {
-			this.board[row][col] = -1; //-1 means the square was a miss
+			if (this.board[row][col] == 0) {
+				this.board[row][col] = -1; //-1 means the square was a miss
+			}
 			return;
 		}
 

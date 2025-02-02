@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Player_1 = require("./Player");
 const Ship_1 = require("./Ship");
 const GBView_1 = require("./GBView");
+const ComputerEnemy_1 = require("./ComputerEnemy");
 require("./styles.css");
 const playerOne = new Player_1.Player();
 const playerTwo = new Player_1.Player();
@@ -13,9 +14,7 @@ const containerTwo = document.getElementById("containerTwo");
 boardOne.addShip(3, 4, new Ship_1.Ship(3), [0, 1]);
 boardOne.addShip(5, 6, new Ship_1.Ship(4), [1, 0]);
 boardOne.addShip(7, 8, new Ship_1.Ship(2), [-1, 0]);
-boardTwo.addShip(5, 7, new Ship_1.Ship(2), [1, 0]);
-boardTwo.addShip(9, 1, new Ship_1.Ship(4), [0, 1]);
-boardTwo.addShip(0, 2, new Ship_1.Ship(3), [1, 0]);
+(0, ComputerEnemy_1.generateBoard)(boardTwo);
 (0, GBView_1.viewBoard)(boardOne, containerOne);
 (0, GBView_1.viewBoard)(boardTwo, containerTwo);
 document.addEventListener("tileClick", (e) => {

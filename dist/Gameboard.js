@@ -5,7 +5,7 @@ const Ship_1 = require("./Ship");
 class Gameboard {
     constructor() {
         this.board = Array(10)
-            .fill(0)
+            .fill(null)
             .map(() => Array(10).fill(0));
         this.ships = 0;
     }
@@ -28,7 +28,7 @@ class Gameboard {
         const length = ship.length;
         const endR = row + (length - 1) * direction[0];
         const endC = col + (length - 1) * direction[1];
-        if (endR > 10 || endC > 10) {
+        if (endR >= 10 || endC >= 10 || endR < 0 || endC < 0) {
             return false;
         }
         let r = row;

@@ -1,6 +1,7 @@
 import { Player } from "./Player";
 import { Ship } from "./Ship";
 import { viewBoard, clearBoard } from "./GBView";
+import { generateBoard } from "./ComputerEnemy";
 import "./styles.css";
 
 const playerOne = new Player();
@@ -16,9 +17,7 @@ boardOne.addShip(3, 4, new Ship(3), [0, 1]);
 boardOne.addShip(5, 6, new Ship(4), [1, 0]);
 boardOne.addShip(7, 8, new Ship(2), [-1, 0]);
 
-boardTwo.addShip(5, 7, new Ship(2), [1, 0]);
-boardTwo.addShip(9, 1, new Ship(4), [0, 1]);
-boardTwo.addShip(0, 2, new Ship(3), [1, 0]);
+generateBoard(boardTwo);
 
 viewBoard(boardOne, containerOne);
 

@@ -13,6 +13,7 @@
 				<button id="restartButton" class="bg-blue-500 text-white px-4 py-2 rounded-md">Restart Game</button>
 			</div>
 		</div>
+
 		<!-- GameBoard -->
 		<div class="flex items-center justify-center min-h-screen space-x-12 bg-gray-100">
 			<!-- PlayerOne -->
@@ -29,6 +30,93 @@
 					<!-- Grid Tiles From Script -->
 				</div>
 			</div>
+		</div>
+
+		<!-- Form Container -->
+		<div id="setupScreen" class="fixed inset-0 flex flex-col items-center justify-center bg-gray-900 bg-opacity-75">
+			<h1 class="text-6xl bold text-green-600 mb-12">Battleship</h1>
+			<form action="#" id="shipForm" class="bg-white p-6 rounded-lg shadow-lg flex flex-col space-y-6">
+				<div class="flex space-x-12">
+					<div class="flex flex-col">
+						<h2 class="text-center text-2xl">Carrier (5)</h2>
+						<label for="carrier-row">Row (0-9):</label>
+						<input type="number" id="carrier-row" min="0" max="9" required class="border p-1" />
+						<label for="carrier-col">Column (0-9):</label>
+						<input type="number" id="carrier-col" min="0" max="9" required class="border p-1" />
+						<label for="carrier-direction">Direction:</label>
+						<select id="carrier-direction" class="border p-1">
+							<option value="Up">Up</option>
+							<option value="Right">Right</option>
+							<option value="Down">Down</option>
+							<option value="Left">Left</option>
+						</select>
+					</div>
+
+					<div class="flex flex-col">
+						<h2 class="text-center text-2xl">Battleship (4)</h2>
+						<label for="battleship-row">Row (0-9):</label>
+						<input type="number" id="battleship-row" min="0" max="9" required class="border p-1" />
+						<label for="battleship-col">Column (0-9):</label>
+						<input type="number" id="battleship-col" min="0" max="9" required class="border p-1" />
+						<label for="battleship-direction">Direction:</label>
+						<select id="battleship-direction" class="border p-1">
+							<option value="Up">Up</option>
+							<option value="Right">Right</option>
+							<option value="Down">Down</option>
+							<option value="Left">Left</option>
+						</select>
+					</div>
+
+					<div class="flex flex-col">
+						<h2 class="text-center text-2xl">Destroyer (3)</h2>
+						<label for="destroyer-row">Row (0-9):</label>
+						<input type="number" id="destroyer-row" min="0" max="9" required class="border p-1" />
+						<label for="destroyer-col">Column (0-9):</label>
+						<input type="number" id="destroyer-col" min="0" max="9" required class="border p-1" />
+						<label for="destroyer-direction">Direction:</label>
+						<select id="destroyer-direction" class="border p-1">
+							<option value="Up">Up</option>
+							<option value="Right">Right</option>
+							<option value="Down">Down</option>
+							<option value="Left">Left</option>
+						</select>
+					</div>
+
+					<div class="flex flex-col">
+						<h2 class="text-center text-2xl">Submarine (3)</h2>
+						<label for="submarine-row">Row (0-9):</label>
+						<input type="number" id="submarine-row" min="0" max="9" required class="border p-1" />
+						<label for="submarine-col">Column (0-9):</label>
+						<input type="number" id="submarine-col" min="0" max="9" required class="border p-1" />
+						<label for="submarine-direction">Direction:</label>
+						<select id="submarine-direction" class="border p-1">
+							<option value="Up">Up</option>
+							<option value="Right">Right</option>
+							<option value="Down">Down</option>
+							<option value="Left">Left</option>
+						</select>
+					</div>
+
+					<div class="flex flex-col">
+						<h2 class="text-center text-2xl">Patrol Boat (2)</h2>
+						<label for="patrol-row">Row (0-9):</label>
+						<input type="number" id="patrol-row" min="0" max="9" required class="border p-1" />
+						<label for="patrol-col">Column (0-9):</label>
+						<input type="number" id="patrol-col" min="0" max="9" required class="border p-1" />
+						<label for="patrol-direction">Direction:</label>
+						<select id="patrol-direction" class="border p-1">
+							<option value="Up">Up</option>
+							<option value="Right">Right</option>
+							<option value="Down">Down</option>
+							<option value="Left">Left</option>
+						</select>
+					</div>
+				</div>
+
+				<h2 id="errorMessage" class="text-center text-red-600 text-2xl hidden">Error: Ships Do Not Have Valid Placement</h2>
+
+				<button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md self-center hover:cursor-pointer">Start Game</button>
+			</form>
 		</div>
 	</body>
 </html>

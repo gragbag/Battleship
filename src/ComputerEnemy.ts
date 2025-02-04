@@ -38,4 +38,18 @@ const placeShip = (ship: Ship, gameboard: Gameboard) => {
 	}
 };
 
-export { generateBoard };
+const randomAttack = (gameboard: Gameboard) => {
+	let row = getRandomInt(10);
+	let col = getRandomInt(10);
+
+	while (!gameboard.receiveAttack(row, col)) {
+		row = getRandomInt(10);
+		col = getRandomInt(10);
+	}
+
+	if (gameboard.board[row][col] == 1) {
+		randomAttack(gameboard); //Go again if it was a success
+	}
+};
+
+export { generateBoard, randomAttack };

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.generateBoard = void 0;
+exports.randomAttack = exports.generateBoard = void 0;
 const Ship_1 = require("./Ship");
 const directions = [
     [0, 1],
@@ -34,3 +34,15 @@ const placeShip = (ship, gameboard) => {
         dir = directions[getRandomInt(4)];
     }
 };
+const randomAttack = (gameboard) => {
+    let row = getRandomInt(10);
+    let col = getRandomInt(10);
+    while (!gameboard.receiveAttack(row, col)) {
+        row = getRandomInt(10);
+        col = getRandomInt(10);
+    }
+    if (gameboard.board[row][col] == 1) {
+        randomAttack(gameboard); //Go again if it was a success
+    }
+};
+exports.randomAttack = randomAttack;

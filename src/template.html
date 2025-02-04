@@ -6,28 +6,27 @@
 		<title>Battleship</title>
 	</head>
 	<body>
+		<!-- Game Over Popup -->
+		<div id="gameOverPopup" class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 hidden">
+			<div class="bg-white p-6 rounded-lg shadow-lg text-center">
+				<h2 id="winnerText" class="text-2xl font-bold mb-4"></h2>
+				<button id="restartButton" class="bg-blue-500 text-white px-4 py-2 rounded-md">Restart Game</button>
+			</div>
+		</div>
 		<!-- GameBoard -->
 		<div class="flex items-center justify-center min-h-screen space-x-12 bg-gray-100">
 			<!-- PlayerOne -->
 			<div class="flex flex-col items-center">
 				<h1 class="text-4xl bold">Player One Board</h1>
 				<div class="grid grid-rows-10 grid-cols-10 gap-1 p-4" id="containerOne">
-					<!-- <script>
-						for (let i = 1; i <= 100; i++) {
-							document.write(`<div class="flex items-center justify-center w-12 h-12 bg-blue-200 border border-blue-400"></div>`);
-						}
-					</script> -->
+					<!-- Grid Tiles From Script -->
 				</div>
 			</div>
 
 			<div class="flex flex-col items-center">
 				<h1 class="text-4xl bold">Player Two Board</h1>
 				<div class="grid grid-rows-10 grid-cols-10 gap-1 p-4" id="containerTwo">
-					<!-- <script>
-						for (let i = 1; i <= 100; i++) {
-							document.write(`<div class="flex items-center justify-center w-12 h-12 bg-blue-200 border border-blue-400"></div>`);
-						}
-					</script> -->
+					<!-- Grid Tiles From Script -->
 				</div>
 			</div>
 		</div>

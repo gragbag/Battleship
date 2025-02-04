@@ -52,14 +52,19 @@ export class Gameboard {
 		return true;
 	}
 
-	receiveAttack(row: number, col: number) {
-		if (!(this.board[row][col] instanceof Ship)) {
-			if (this.board[row][col] == 0) {
-				this.board[row][col] = -1; //-1 means the square was a miss
-			}
-			return;
+	receiveAttack(row: number, col: number): boolean {
+		if (this.board[row][col] == 1 || this.board[row][col] == -1) {
+			//If square was already attacked
+			return false;
 		}
 
+		if (this.board[row][col] == 0) {
+			//If square is water
+			this.board[row][col] = -1; //-1 means the square was a miss
+			return true;
+		}
+
+		//Else square is a ship
 		this.board[row][col].hit(); //The item on row / col should be a ship
 
 		if (this.board[row][col].isSunk()) {
@@ -67,9 +72,18 @@ export class Gameboard {
 		}
 
 		this.board[row][col] = 1; //1 means the square has already been hit
+		return true;
 	}
 
 	gameOver() {
 		return this.ships == 0;
+	}
+
+	clearBoard() {
+		for (let r = 0; r < 10; r++) {
+			for (let c = 0; c < 10; c++) {
+				this.board[r][c] = 0;
+			}
+		}
 	}
 }
